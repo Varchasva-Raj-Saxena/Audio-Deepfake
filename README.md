@@ -1,54 +1,73 @@
-# Audio Spoof Detection Model
+# Audio Spoof Detection using SVM
 
-This repository contains a Support Vector Machine (SVM)-based model designed to detect audio spoofing attacks. The model processes audio features to distinguish between genuine and spoofed audio samples, contributing to the security of voice authentication systems.
+This repository contains a Jupyter Notebook that implements an SVM-based classifier for detecting spoofed versus genuine audio. The model leverages feature extraction (MFCCs, CQCCs) from the ASVspoof2019 Logical Access (LA) dataset and uses a Support Vector Machine (SVM) to classify audio samples.
 
 ## Table of Contents
 
+- [Overview](#overview)
 - [Requirements](#requirements)
-  - [Dependencies](#dependencies)
-  - [Setup Instructions](#setup-instructions)
+- [Setup Instructions](#setup-instructions)
 - [Dataset](#dataset)
-- [Usage](#usage)
-- [Results](#results)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
+- [Running the Notebook](#Running-the-Notebook)
+
+## Overview
+
+This project demonstrates a machine learning pipeline for audio spoof detection. The pipeline includes:
+- Preprocessing raw audio data (downsampling and converting to mono)
+- Extracting spectral features (MFCCs, CQCCs) using Librosa
+- Training an SVM classifier with an RBF kernel
+- Evaluating the model using accuracy, confusion matrix, and other metrics
+
 
 ## Requirements
 
-To set up and run this project, ensure that your system meets the following requirements:
-
-- **Python Version**: Python 3.x
-- **Jupyter Notebook**: For running the provided notebook files.
+- **Python 3.x**
+- **Jupyter Notebook** (for running the notebook)
 
 ### Dependencies
 
-The project relies on several Python libraries. These dependencies are listed in the `requirements.txt` file included in this repository.
+The project requires the following Python libraries:
+- `numpy`
+- `librosa`
+- `soundfile`
+- `scikit-learn`
 
-### Setup Instructions
+All dependencies are listed in the `requirements.txt` file.
 
-1. **Clone the Repository**:
+## Setup Instructions
+
+1. **Clone the Repository:**
 
    ```bash
    git clone https://github.com/yourusername/audio-spoof-detection.git
-2. **Navigate to the Project Directory**:
-    ```bash
-    cd audio-spoof-detection
-3. **Create a Virtual Environment**(Optional)
+   cd audio-spoof-detection
+2. **Create a Virtual Environment (optional):**
     ```bash
     python3 -m venv venv
-    source venv/bin/activate  # On Windows, use 'venv\Scripts\activate'
-4. **Install Dependencies**
+    source venv/bin/activate
+3. **Install Dependencies:**
     ```bash
     pip install -r requirements.txt
 
-5. **Obtain the Dataset**
+## Dataset
+This project uses the ASVspoof 2019 Logical Access (LA) dataset.
 
-The model requires the ASVspoof 2019 Logical Access (LA) dataset. Due to licensing restrictions, the dataset is not included in this repository. You can obtain it from the ASVspoof website. After downloading, place the dataset in the data directory within the project folder.
+- `Visit the ASVspoof website: https://www.kaggle.com/datasets/awsaf49/asvpoof-2019-dataset`
 
-6. **Run the Jupyter Notebook**
+Download the ASVspoof 2019 LA dataset.
+
+Unzip and organize the dataset, Keep only the LA folder and give its path.
+
+## Running the Notebook
+1. **Launch Jupyter Notebook**
+
     ```bash
     jupyter notebook
 
+2. **Open main.ipynb**
 
+    In the Jupyter interface, open the main.ipynb notebook.
 
+3. **Execute All Cells**
+
+    Follow the step-by-step instructions in the notebook to preprocess data, train the SVM model, and evaluate its performance.
