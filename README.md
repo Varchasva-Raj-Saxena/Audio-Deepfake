@@ -58,6 +58,13 @@ Download the ASVspoof 2019 LA dataset.
 
 Unzip and organize the dataset, Keep only the LA folder and give its path.
 
+
+    LA/LA/
+    ├── ASVspoof2019_LA_train/
+    ├── ASVspoof2019_LA_dev/
+    └── ASVspoof2019_LA_cm_protocols/
+
+
 ## Running the Notebook
 1. **Launch Jupyter Notebook**
 
